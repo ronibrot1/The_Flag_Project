@@ -6,15 +6,20 @@ NUM_ROWS, NUM_COLS = 25, 50
 WINDOW_WIDTH, WINDOW_HEIGHT = NUM_COLS * SIZE_CELL, NUM_ROWS * SIZE_CELL
 
 GREEN = (0, 102, 0)
-BLUE = (50, 61, 138)
 WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
+BLACK = (40, 40, 40)
 
 FPS = 60
 
 SOLDIER_IMAGE = pygame.image.load((os.path.join('bin', 'soldier.png')))
 SOLDIER_WIDTH, SOLDIER_HEIGHT = 2 * SIZE_CELL, 4 * SIZE_CELL
 SOLDIER = pygame.transform.scale(SOLDIER_IMAGE, (SOLDIER_WIDTH, SOLDIER_HEIGHT))
+
+SOLDIER_NIGHT_IMAGE = pygame.image.load((os.path.join('bin', 'soldier_night.png')))
+SOLDIER_NIGHT = pygame.transform.scale(SOLDIER_NIGHT_IMAGE, (SOLDIER_WIDTH, SOLDIER_HEIGHT))
+
+INJURED_SOLDIER_IMAGE = pygame.image.load((os.path.join('bin', 'injury.png')))
+INJURED_SOLDIER = pygame.transform.scale(INJURED_SOLDIER_IMAGE, (SOLDIER_WIDTH, SOLDIER_HEIGHT))
 
 FLAG_IMAGE = pygame.image.load((os.path.join('bin', 'flag.png')))
 FLAG_WIDTH, FLAG_HEIGHT = 4 * SIZE_CELL, 3 * SIZE_CELL
@@ -28,11 +33,15 @@ MINE_IMAGE = pygame.image.load((os.path.join('bin', 'mine.png')))
 MINE_WIDTH, MINE_HEIGHT = 3 * SIZE_CELL, 1 * SIZE_CELL
 MINE = pygame.transform.scale(MINE_IMAGE, (MINE_WIDTH, MINE_HEIGHT))
 
+EXPLOSION_IMAGE = pygame.image.load((os.path.join('bin', 'explosion.png')))
+EXPLOSION_WIDTH, EXPLOSION_HEIGHT = 3 * SIZE_CELL, 4 * SIZE_CELL
+EXPLOSION = pygame.transform.scale(EXPLOSION_IMAGE, (EXPLOSION_WIDTH, EXPLOSION_HEIGHT))
+
 FONT_NAME = "Calibri"
 
 LOSE_MESSAGE = "You Lost!"
 LOSE_FONT_SIZE = int(0.15 * WINDOW_WIDTH)
-LOSE_COLOR = BLACK
+LOSE_COLOR = WHITE
 LOSE_LOCATION = 0.2 * WINDOW_WIDTH, WINDOW_HEIGHT / 2 - (LOSE_FONT_SIZE / 2)
 
 WIN_MESSAGE = "You Won!"
