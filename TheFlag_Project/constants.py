@@ -1,5 +1,5 @@
 import os
-import pygame.image
+import pygame
 
 SIZE_CELL = 20
 NUM_ROWS, NUM_COLS = 25, 50
