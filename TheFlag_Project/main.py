@@ -2,6 +2,7 @@ import pygame
 import Screen
 import constants
 
+
 def main():
     run = True
     clock = pygame.time.Clock()
