@@ -8,13 +8,15 @@ WINDOW_WIDTH, WINDOW_HEIGHT = NUM_COLS * SIZE_CELL, NUM_ROWS * SIZE_CELL
 GREEN = (0, 102, 0)
 BLUE = (50, 61, 138)
 WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
+BLACK = (40, 40, 40)
 
 FPS = 60
 
 SOLDIER_IMAGE = pygame.image.load((os.path.join('bin', 'soldier.png')))
+SOLDIER_IMAGE_NIGHT = pygame.image.load((os.path.join('bin', 'soldier_night.png')))
 SOLDIER_WIDTH, SOLDIER_HEIGHT = 2 * SIZE_CELL, 4 * SIZE_CELL
 SOLDIER = pygame.transform.scale(SOLDIER_IMAGE, (SOLDIER_WIDTH, SOLDIER_HEIGHT))
+SOLDIER_NIGHT = pygame.transform.scale(SOLDIER_IMAGE_NIGHT, (SOLDIER_WIDTH, SOLDIER_HEIGHT))
 
 FLAG_IMAGE = pygame.image.load((os.path.join('bin', 'flag.png')))
 FLAG_WIDTH, FLAG_HEIGHT = 4 * SIZE_CELL, 3 * SIZE_CELL
