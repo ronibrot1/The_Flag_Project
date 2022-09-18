@@ -15,14 +15,14 @@ def main():
     clock = pygame.time.Clock()
 
     while run:
-        clock.tick(constants.FPS)
-        for event in pygame.event.get():
+        clock.tick(constants.FPS)  # keeps the highest speed at which the game operates the same for each computer
+        for event in pygame.event.get():  # run for each event(key pressed, window closed etc')
             if event.type == pygame.QUIT:
                 run = False
-            if event.type == pygame.KEYDOWN:
+            if event.type == pygame.KEYDOWN:  # if a key is being pressed execute the following code:
                 if event.key != pygame.K_RETURN:  # if ENTER wasn't pressed
                     Soldier.soldier_move(event)
-                if event.key == pygame.K_RETURN:
+                if event.key == pygame.K_RETURN:  # executes "night mode" when ENTER is pressed
                     Screen.dark_mode_grid(Soldier.soldier_place)
                     Screen.block_keyboard()
                     pygame.time.wait(1000)
