@@ -54,3 +54,9 @@ WIN_MESSAGE = "You Won!"
 WIN_FONT_SIZE = LOSE_FONT_SIZE
 WIN_COLOR = BLACK
 WIN_LOCATION = 0.2 * WINDOW_WIDTH, WINDOW_HEIGHT / 2 - (WIN_FONT_SIZE / 2)
+
+CSV_FILE = 'the_flag_memory.csv'
+SOLDIER_MEMORY_X = "soldier_place_x"
+SOLDIER_MEMORY_Y = "soldier_place_y"
+MINE_MEMORY = "mine_matrix"
+GRASS_MEMORY = "grass_matrix"
