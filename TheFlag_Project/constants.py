@@ -11,6 +11,12 @@ BLACK = (40, 40, 40)
 
 FPS = 60
 
+EMPTY = 0
+MINE_INDEX = 1
+FIRST_INDEX_OF_MINE = 10
+GRASS_INDEX = 1
+FLAG_INDEX = 2
+
 SOLDIER_IMAGE = pygame.image.load((os.path.join('bin', 'soldier.png')))
 SOLDIER_WIDTH, SOLDIER_HEIGHT = 2 * SIZE_CELL, 4 * SIZE_CELL
 SOLDIER = pygame.transform.scale(SOLDIER_IMAGE, (SOLDIER_WIDTH, SOLDIER_HEIGHT))

@@ -16,7 +16,7 @@ def main():
 
     while run:
         clock.tick(constants.FPS)  # keeps the highest speed at which the game operates the same for each computer
-        for event in pygame.event.get():  # run for each event(key pressed, window closed etc')
+        for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
             if event.type == pygame.KEYDOWN:  # if a key is being pressed execute the following code:
