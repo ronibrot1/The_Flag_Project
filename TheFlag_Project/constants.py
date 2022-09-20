@@ -24,6 +24,10 @@ SOLDIER = pygame.transform.scale(SOLDIER_IMAGE, (SOLDIER_WIDTH, SOLDIER_HEIGHT))
 SOLDIER_NIGHT_IMAGE = pygame.image.load((os.path.join('bin', 'soldier_night.png')))
 SOLDIER_NIGHT = pygame.transform.scale(SOLDIER_NIGHT_IMAGE, (SOLDIER_WIDTH, SOLDIER_HEIGHT))
 
+GUARD_IMAGE = pygame.imagine.load((os.path.join('bin', 'guard_png')))
+GUARD_WIDTH, GUARD_HEIGHT = 2 * SIZE_CELL, 4 * SIZE_CELL
+GUARD = pygame.transform.scale(GUARD_IMAGE, (GUARD_WIDTH, GUARD_HEIGHT))
+
 INJURED_SOLDIER_IMAGE = pygame.image.load((os.path.join('bin', 'injury.png')))
 INJURED_SOLDIER = pygame.transform.scale(INJURED_SOLDIER_IMAGE, (SOLDIER_WIDTH, SOLDIER_HEIGHT))
 
@@ -42,6 +46,10 @@ MINE = pygame.transform.scale(MINE_IMAGE, (MINE_WIDTH, MINE_HEIGHT))
 EXPLOSION_IMAGE = pygame.image.load((os.path.join('bin', 'explosion.png')))
 EXPLOSION_WIDTH, EXPLOSION_HEIGHT = 3 * SIZE_CELL, 4 * SIZE_CELL
 EXPLOSION = pygame.transform.scale(EXPLOSION_IMAGE, (EXPLOSION_WIDTH, EXPLOSION_HEIGHT))
+
+HOLE_IMAGE = pygame.image.load((os.path.join('bin', 'hole.png')))
+HOLE_WIDTH, HOLE_HEIGHT = 3 * SIZE_CELL, 1 * SIZE_CELL
+HOLE = pygame.transform.scale(HOLE_IMAGE, (HOLE_WIDTH, HOLE_HEIGHT))
 
 FONT_NAME = "Calibri"
 
