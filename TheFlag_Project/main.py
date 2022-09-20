@@ -5,11 +5,14 @@ import Soldier
 import constants
 import time
 import Database
+import Teleport
+import Guard
 
 Screen.grass_location()
 MineField.create_field_mat()
 MineField.mine_location()
 MineField.flag_location()
+Teleport.create_hole_randomly()
 
 
 def main():
@@ -17,6 +20,7 @@ def main():
     clock = pygame.time.Clock()
     t = 0
     key_event = 0
+    direction = True
     while run:
         clock.tick(constants.FPS)  # keeps the highest speed at which the game operates the same for each computer
         for event in pygame.event.get():
@@ -41,14 +45,30 @@ def main():
                     else:
                         Database.load_state(key_event)
 
-        if Soldier.check_if_soldier_touches_mine(MineField.field_matrix):
-            Screen.lose_message()
-            break
-        elif Soldier.check_if_soldier_touches_flag(MineField.field_matrix):
-            Screen.win_message()
-            break
+        if not Teleport.check_if_soldier_in_hole(Soldier.soldier_place):
+            if Soldier.check_if_soldier_touches_mine(MineField.field_matrix):
+                Screen.lose_message()
+                break
+            elif Soldier.check_if_soldier_touches_flag(MineField.field_matrix):
+                Screen.win_message()
+                break
 
         Screen.show_board(Soldier.soldier_place)
+
+        if Guard.check_soldier_guard_collide():
+            Screen.lose_message()
+            break
+
+        if direction:
+            Guard.move_guard_right(Screen.screen)
+            if Guard.guard_place.x == constants.WINDOW_WIDTH - constants.GUARD_WIDTH:
+                direction = False
+        else:
+            Guard.move_guard_left(Screen.screen)
+            if Guard.guard_place.x == 0:
+                direction = True
+
+        pygame.display.update()
 
     pygame.quit()
 

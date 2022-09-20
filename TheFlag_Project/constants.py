@@ -9,7 +9,7 @@ GREEN = (0, 102, 0)
 WHITE = (255, 255, 255)
 BLACK = (40, 40, 40)
 
-FPS = 60
+FPS = 15
 
 EMPTY = 0
 MINE_INDEX = 1
@@ -24,9 +24,12 @@ SOLDIER = pygame.transform.scale(SOLDIER_IMAGE, (SOLDIER_WIDTH, SOLDIER_HEIGHT))
 SOLDIER_NIGHT_IMAGE = pygame.image.load((os.path.join('bin', 'soldier_night.png')))
 SOLDIER_NIGHT = pygame.transform.scale(SOLDIER_NIGHT_IMAGE, (SOLDIER_WIDTH, SOLDIER_HEIGHT))
 
-GUARD_IMAGE = pygame.imagine.load((os.path.join('bin', 'guard_png')))
+GUARD_IMAGE = pygame.image.load((os.path.join('bin', 'guard.png')))
 GUARD_WIDTH, GUARD_HEIGHT = 2 * SIZE_CELL, 4 * SIZE_CELL
-GUARD = pygame.transform.scale(GUARD_IMAGE, (GUARD_WIDTH, GUARD_HEIGHT))
+GUARD_L = pygame.transform.scale(GUARD_IMAGE, (GUARD_WIDTH, GUARD_HEIGHT))
+
+GUARD_IMAGE_R = pygame.transform.flip(GUARD_IMAGE, True, False)
+GUARD_R = pygame.transform.scale(GUARD_IMAGE_R, (GUARD_WIDTH, GUARD_HEIGHT))
 
 INJURED_SOLDIER_IMAGE = pygame.image.load((os.path.join('bin', 'injury.png')))
 INJURED_SOLDIER = pygame.transform.scale(INJURED_SOLDIER_IMAGE, (SOLDIER_WIDTH, SOLDIER_HEIGHT))
@@ -68,3 +71,6 @@ SOLDIER_MEMORY_X = "soldier_place_x"
 SOLDIER_MEMORY_Y = "soldier_place_y"
 MINE_MEMORY = "mine_matrix"
 GRASS_MEMORY = "grass_matrix"
+GUARD_MEMORY_X = "guard_place_x"
+GUARD_MEMORY_Y = "guard_place_y"
+HOLE_MEMORY = "holes_places"

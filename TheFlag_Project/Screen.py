@@ -4,6 +4,7 @@ import random
 import MineField
 import Soldier
 import keyboard
+import Teleport
 
 # generates a screen with the wanted dimensions
 screen = pygame.display.set_mode((constants.WINDOW_WIDTH, constants.WINDOW_HEIGHT))
@@ -18,6 +19,7 @@ grass_matrix = []
 def show_board(soldier_place):  # function in charge of showing the game board (field itself)
     screen.fill(constants.GREEN)  # makes the background green
     print_grass()
+    Teleport.add_holes_to_display(screen)
     screen.blit(message_first_part, (2 * constants.SIZE_CELL, 1 * constants.SIZE_CELL))
     screen.blit(message_second_part, (2 * constants.SIZE_CELL, 2 * constants.SIZE_CELL))
     screen.blit(constants.FLAG,
